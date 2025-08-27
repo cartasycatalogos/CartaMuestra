@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menú Virtual - [Nombre del Restaurante]</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="language-switcher">
+            <button onclick="loadMenu('es')">ES</button>
+            <button onclick="loadMenu('en')">EN</button>
+        </div>
+        <img src="assets/logo.png" alt="Logo del Restaurante" class="logo">
+        <h1 class="restaurant-name"></h1>
+        <p class="slogan"></p>
+    </header>
+
+    <main class="menu-container">
+
+        <section class="menu-category daily-special-section">
+            <h2 class="category-title"></h2>
+            <div class="menu-item daily-special">
+                <img src="assets/plato-del-dia.jpg" alt="Foto del plato del día" class="item-image">
+                <div class="item-details">
+                    <h3 class="item-name"></h3>
+                    <p class="item-description"></p>
+                </div>
+                <span class="item-price"></span>
+            </div>
+        </section>
+
+        <section class="menu-category main-dishes-section">
+            <h2 class="category-title"></h2>
+            <div class="main-dishes-container">
+                </div>
+        </section>
+        
+    </main>
+
+    <footer class="footer">
+        <p></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
