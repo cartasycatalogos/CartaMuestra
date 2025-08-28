@@ -143,3 +143,23 @@ function setupBackToTop(){
   onScroll();
   btn.addEventListener('click', ()=> window.scrollTo({ top:0, behavior:'smooth' }));
 }
+// === Dark Mode Toggle ===
+const darkModeToggle = document.createElement("button");
+darkModeToggle.id = "darkModeToggle";
+darkModeToggle.textContent = "🌙";
+darkModeToggle.style.position = "fixed";
+darkModeToggle.style.top = "16px";
+darkModeToggle.style.right = "16px";
+darkModeToggle.style.zIndex = "1000";
+darkModeToggle.style.padding = "10px 14px";
+darkModeToggle.style.border = "none";
+darkModeToggle.style.borderRadius = "12px";
+darkModeToggle.style.background = "var(--brand)";
+darkModeToggle.style.color = "var(--brand-contrast)";
+darkModeToggle.style.cursor = "pointer";
+document.body.appendChild(darkModeToggle);
+
+darkModeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+});
