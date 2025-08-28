@@ -1,151 +1,72 @@
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    background: #f8f9fa;
-    color: #343a40;
-    line-height: 1.6;
-    transition: background 0.5s ease, color 0.5s ease;
-}
-
-.header {
-    text-align: center;
-    padding: 2.5rem 1rem;
-    background: #2c6e49;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.logo {
-    width: 120px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-}
-
-.language-switcher {
-    text-align: right;
-    margin-bottom: 1rem;
-}
-
-.language-switcher button {
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background 0.3s ease;
-}
-
-.language-switcher button:hover {
-    background: rgba(255,255,255,0.3);
-}
-
-.menu-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.menu-category {
-    margin-bottom: 2rem;
-}
-
-.category-title {
-    font-size: 1.8rem;
-    color: #2c6e49;
-    border-bottom: 2px solid #2c6e49;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-}
-
-.card {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 1rem;
-    margin-bottom: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation: fadeIn 0.5s ease-out;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-}
-
-.card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.card-body {
-    flex-grow: 1;
-}
-
-.card-body h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #343a40;
-}
-
-.card-body p {
-    margin: 0.4rem 0 0;
-    font-size: 0.95rem;
-    color: #6c757d;
-}
-
-.item-price {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ffc857;
-    flex-shrink: 0;
-    text-align: right;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.footer {
-    text-align: center;
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
-    color: #6c757d;
-}
-
-/* Modo oscuro (Dark Mode) */
-body.dark {
-    background: #121212;
-    color: #e0e0e0;
-}
-
-body.dark .header {
-    background: #1a3c26;
-}
-
-body.dark .card {
-    background: #242424;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-
-body.dark .card-body h3 {
-    color: #e0e0e0;
-}
-
-body.dark .item-price {
-    color: #ffc857;
-}
-
-body.dark .category-title {
-    color: #ffc857;
-    border-bottom: 2px solid #ffc857;
-}
+:root{
+    background-size: 24px 24px; opacity:.2;
+    }
+    .brand-row{ display:flex; align-items:center; gap:18px; }
+    .logo{
+    width:64px; height:64px; border-radius:50%; background: rgba(255,255,255,.18);
+    display:grid; place-items:center; font-weight:700; letter-spacing:.5px; font-size:22px;
+    border: 2px solid rgba(255,255,255,.45); backdrop-filter: blur(4px);
+    }
+    .brand-title{ margin:0; font-size: clamp(28px, 4vw, 40px); line-height:1.05; }
+    .brand-sub{ margin:8px 0 0; opacity:.9 }
+    
+    
+    /* Nav categorías */
+    .category-nav{ position: sticky; top:0; z-index: 5; background: rgba(247,247,251,.7); backdrop-filter: blur(6px); border-bottom:1px solid rgba(0,0,0,.06)}
+    .pillbar{ display:flex; gap:12px; overflow:auto; padding:12px 20px; scroll-snap-type: x mandatory }
+    .pillbar a{
+    scroll-snap-align:center; white-space:nowrap; text-decoration:none; color:var(--text);
+    background: var(--surface); border:1px solid rgba(0,0,0,.06); padding:10px 14px; border-radius:999px;
+    font-weight:600; font-size:14px; box-shadow: 0 2px 8px rgba(17,24,39,.04);
+    }
+    .pillbar a.active{ background: var(--brand); color: var(--brand-contrast); border-color: transparent }
+    
+    
+    /* Secciones */
+    .menu-section{ padding: 38px 0 }
+    .section-head{ display:flex; align-items:center; gap:10px; margin-bottom:18px }
+    .section-head h2{ margin:0; font-size: clamp(22px, 2.6vw, 28px) }
+    .section-head .hint{ color: var(--muted); font-size:14px }
+    
+    
+    .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:20px }
+    .card{ grid-column: span 12; background: var(--surface); border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); border:1px solid rgba(0,0,0,.06) }
+    @media (min-width: 640px){ .card{ grid-column: span 6 } }
+    @media (min-width: 980px){ .card{ grid-column: span 4 } }
+    
+    
+    .media{ position:relative; aspect-ratio: 4/3; overflow:hidden }
+    .media img{ width:100%; height:100%; object-fit: cover; display:block; transition: transform .4s ease }
+    .card:hover .media img{ transform: scale(1.04) }
+    .price-badge{ position:absolute; right:12px; top:12px; background: rgba(0,0,0,.65); color:#fff; padding:6px 10px; border-radius: 999px; font-weight:700; font-size:13px }
+    
+    
+    .content{ padding:16px 16px 18px }
+    .title{ margin:0 0 6px; font-size:18px; font-weight:700 }
+    .desc{ margin:0; color: var(--muted); font-size: 14px; line-height:1.45; min-height: 40px }
+    .meta{ display:flex; align-items:center; justify-content: space-between; gap:12px; margin-top:12px }
+    .tag{ font-size:12px; padding:6px 10px; border-radius:999px; border:1px dashed rgba(0,0,0,.18); color: var(--muted) }
+    .add{ border:none; background: var(--brand); color: var(--brand-contrast); padding:10px 14px; border-radius: 12px; font-weight:700; cursor:pointer }
+    .add:active{ transform: translateY(1px) }
+    
+    
+    /* Footer */
+    footer{ margin: 56px 0 32px; color: var(--muted) }
+    
+    
+    /* Botón top */
+    .back-top{
+    position: fixed; right: 16px; bottom: 16px; z-index: 4; display:none;
+    padding: 12px 14px; border-radius: 12px; background: var(--brand); color: var(--brand-contrast);
+    border:none; box-shadow: var(--shadow); font-weight:700; cursor:pointer
+    }
+    .back-top.show{ display:block }
+    
+    
+    /* Modo impresión */
+    @media print{
+    .category-nav, .back-top, .add, .price-badge{ display:none !important }
+    header.hero{ padding: 24px 0 24px; box-shadow:none }
+    body{ background:#fff }
+    .card{ box-shadow:none }
+    }

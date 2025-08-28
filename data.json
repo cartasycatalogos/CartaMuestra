@@ -1,0 +1,31 @@
+{
+    "restaurant": {
+      "name": "Parrilla La Demo",
+      "logoURL": "",
+      "tagline": "Sabores clásicos con toque moderno",
+      "palette": {
+        "brand": "#6C5CE7",
+        "accent": "#00D1B2",
+        "bg": "#f7f7fb",
+        "surface": "#ffffff",
+        "text": "#1f2937",
+        "muted": "#6b7280"
+      }
+    },
+    "categories": [
+      { "id": "entradas", "label": "Entradas", "emoji": "🥟" },
+      { "id": "minutas", "label": "Minutas", "emoji": "🍽️" },
+      { "id": "carnes", "label": "Carnes", "emoji": "🥩" },
+      { "id": "postres", "label": "Postres", "emoji": "🍮" },
+      { "id": "bebidas", "label": "Bebidas", "emoji": "🥤" }
+    ],
+    "menu": [
+      { "cat": "entradas", "title": "Empanadas de carne (x2)", "desc": "Horneadas, jugosas, receta casera.", "price": 2500, "img": "https://picsum.photos/seed/empanadas/800/600" },
+      { "cat": "entradas", "title": "Provoleta clásica", "desc": "Provolone a la plancha con orégano y chimichurri.", "price": 6500, "img": "https://picsum.photos/seed/provoleta/800/600" },
+      { "cat": "minutas", "title": "Milanesa con fritas", "desc": "Clásica, corte generoso, papas crujientes.", "price": 11500, "img": "https://picsum.photos/seed/milanesa/800/600" },
+      { "cat": "carnes", "title": "Asado de tira", "desc": "A la parrilla, término a elección.", "price": 15900, "img": "https://picsum.photos/seed/asado/800/600" },
+      { "cat": "postres", "title": "Flan casero", "desc": "Con dulce de leche y crema.", "price": 3800, "img": "https://picsum.photos/seed/flan/800/600" },
+      { "cat": "bebidas", "title": "Cerveza artesanal", "desc": "IPA o Golden.", "price": 3600, "img": "https://picsum.photos/seed/cerveza/800/600" }
+    ]
+  }
+  

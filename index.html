@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Virtual - [Nombre del Restaurante]</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carta de muestra</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="language-switcher">
-            <button data-lang="es">ES</button>
-            <button data-lang="en">EN</button>
+  <header class="hero">
+    <div class="container">
+      <div class="brand-row">
+        <div class="logo" id="logo">R</div>
+        <div>
+          <h1 class="brand-title" id="brandTitle">Nombre del Restaurante</h1>
+          <p class="brand-sub" id="brandSubtitle">Carta de muestra – hecho con HTML, CSS y JS</p>
         </div>
-        <img src="assets/logo.jpg" alt="Logo del Restaurante" class="logo">
-        <h1 class="restaurant-name"></h1>
-        <p class="slogan"></p>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <main class="menu-container">
+  <nav class="category-nav">
+    <div class="pillbar container" id="pillbar"></div>
+  </nav>
 
-        <section class="menu-category daily-special-section">
-            <h2 class="category-title"></h2>
-        </section>
+  <main class="container" id="main"></main>
 
-        <section class="menu-category main-dishes-section">
-            <h2 class="category-title"></h2>
-        </section>
+  <footer class="container">
+    <small>
+      * Los precios y fotos son ilustrativos para la demo. Formato de moneda: ARS. |
+      ¿Querés esta carta con tu logo, tus colores y tus platos? ¡Se personaliza en minutos!
+    </small>
+  </footer>
 
-    </main>
+  <button class="back-top" id="backTop" aria-label="Volver arriba">↑ Arriba</button>
 
-    <footer class="footer">
-        <p></p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
