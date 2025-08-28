@@ -6,23 +6,28 @@
         "dailySpecial": {
             "name": "Milanesa a Caballo",
             "description": "Milanesa de ternera rebozada, cubierta con dos huevos fritos y acompañada de papas fritas caseras.",
-            "price": "$9.800"
+            "price": "$9.800",
+            "image": "assets/milanesa.jpg"
         },
-        "mainDishesTitle": "Platos Principales",
+        "mainDishesTitle": "Pizzas",
         "mainDishes": [
             {
-                "name": "Lomo a la Pimienta",
-                "description": "Un clásico irresistible de lomo tierno en salsa cremosa de pimienta negra, con puré de papas.",
-                "price": "$11.500"
+                "name": "Pizza Napolitana",
+                "description": "Salsa de tomate, muzzarella, rodajas de tomate y ajo.",
+                "price": "$12.000",
+                "image": "assets/napolitana.jpg"
             },
             {
-                "name": "Ravioles de Calabaza",
-                "description": "Ravioles caseros rellenos de calabaza asada y especias, con una suave salsa de manteca y salvia.",
-                "price": "$10.200"
+                "name": "Pizza Fugazzeta",
+                "description": "Muzzarella, abundante cebolla, aceitunas y orégano.",
+                "price": "$11.000",
+                "image": "assets/fugazzeta.jpg"
             }
         ],
-        "footerText": "© 2025 [Nombre del Restaurante]."
+        "footerText": "© 2025 Pizza Max."
     },
+
+
     "en": {
         "restaurantName": "[Restaurant Name]",
         "slogan": "The taste of Villa Carlos Paz on your screen",

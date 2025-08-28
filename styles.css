@@ -1,169 +1,30 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #fafafa;
-    color: #333;
-}
-
-.header {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: #ffffff;
-    border-bottom: 2px solid #ddd;
-}
-
-.logo {
-    width: 100px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.restaurant-name {
-    margin: 0;
-    font-size: 2em;
-    color: #444;
-}
-
-.slogan {
-    margin-top: 5px;
-    font-style: italic;
-    color: #888;
-}
-
-.menu-container {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-}
-
-.menu-category {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    margin-bottom: 25px;
-    padding: 20px;
-}
-
-.category-title {
-    font-size: 1.5em;
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.menu-item {
-    display: flex;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.menu-item:last-child {
-    border-bottom: none;
-}
-
-.item-image {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 15px;
-}
-
-.item-details {
-    flex-grow: 1;
-}
-
-.item-name {
-    margin: 0;
-    font-size: 1.1em;
-    color: #222;
-    font-weight: bold;
-}
-
-.item-description {
-    margin: 5px 0 0 0;
-    font-size: 0.9em;
-    color: #666;
-}
-
-.item-price {
-    font-size: 1.1em;
-    font-weight: 700;
-    color: #007bff;
-    padding-left: 15px;
-}
-
-/* Estilos específicos para el plato del día */
-.daily-special {
-    background-color: #eaf6ff;
-    border: 2px solid #007bff;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    color: #999;
-    font-size: 0.8em;
-}
-
-/* Media Queries para diseño responsivo */
-@media (max-width: 600px) {
-    .menu-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .item-image {
-        margin-bottom: 10px;
-    }
-    .item-price {
-        align-self: flex-end;
-    }
-}
-
-/* Agrega esto al final de tu archivo styles.css */
-.language-switcher {
-    text-align: right;
-    margin-bottom: 20px;
-}
-
-.language-switcher button {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-left: 5px;
-}
-
-.language-switcher button:hover {
-    background-color: #e0e0e0;
-}
-
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
     background: #f8f9fa;
     color: #343a40;
     line-height: 1.6;
     transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* Header y sección de idiomas */
 .header {
     text-align: center;
     padding: 2.5rem 1rem;
     background: #2c6e49;
     color: white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.language-switcher {
+    text-align: right;
+    margin-bottom: 1rem;
 }
 
 .language-switcher button {
@@ -181,70 +42,58 @@ body {
     background: rgba(255,255,255,0.3);
 }
 
-/* Barra de búsqueda */
-.toolbar {
-    padding: 2rem 1rem 0;
-    text-align: center;
-}
-
-#buscador {
-    width: min(720px, 100%);
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-    border: 2px solid #ced4da;
-    border-radius: 12px;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-#buscador:focus {
-    border-color: #2c6e49;
-    box-shadow: 0 0 0 4px rgba(44, 110, 73, 0.15);
-}
-
-/* Contenedor principal de los platos */
 .menu-container {
-    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-/* Diseño de cuadrícula para los platos */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 0;
+.menu-category {
+    margin-bottom: 2rem;
 }
 
-/* Estilo de las tarjetas de los platos */
+.category-title {
+    font-size: 1.8rem;
+    color: #2c6e49;
+    border-bottom: 2px solid #2c6e49;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
 .card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 1rem;
+    margin-bottom: 1rem;
     transition: transform 0.3s, box-shadow 0.3s;
     animation: fadeIn 0.5s ease-out;
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
 .card img {
-    width: 100%;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 .card-body {
-    padding: 1rem 1.2rem;
-    text-align: left;
+    flex-grow: 1;
 }
 
 .card-body h3 {
     margin: 0;
-    font-size: 1.25rem;
-    color: #2c6e49;
+    font-size: 1.2rem;
+    color: #343a40;
 }
 
 .card-body p {
@@ -254,44 +103,23 @@ body {
 }
 
 .item-price {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #ffc857; /* Color de acento */
-    margin-top: 0.5rem;
-    display: block;
+    color: #ffc857;
+    flex-shrink: 0;
+    text-align: right;
 }
 
-/* Animaciones */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Botón flotante de WhatsApp */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    z-index: 1000;
-    transition: transform 0.2s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.15);
-}
-
-.whatsapp-float svg {
-    fill: white;
-    width: 32px;
-    height: 32px;
+.footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    color: #6c757d;
 }
 
 /* Modo oscuro (Dark Mode) */
@@ -306,23 +134,18 @@ body.dark .header {
 
 body.dark .card {
     background: #242424;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 body.dark .card-body h3 {
-    color: #ffc857;
+    color: #e0e0e0;
 }
 
 body.dark .item-price {
     color: #ffc857;
 }
 
-body.dark #buscador {
-    background: #2c2c2c;
-    color: #e0e0e0;
-    border-color: #444;
-}
-
-body.dark .language-switcher button {
-    background: #333;
+body.dark .category-title {
+    color: #ffc857;
+    border-bottom: 2px solid #ffc857;
 }

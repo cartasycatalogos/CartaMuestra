@@ -1,8 +1,7 @@
-// script.js (Código actualizado y completo)
+// script.js
 
-const menuData = {}; // Objeto vacío para almacenar los datos cargados desde el JSON
+const menuData = {};
 
-// Esta función carga el contenido del menú en base al idioma y los datos
 function loadMenu(lang) {
     const langData = menuData[lang];
     if (!langData) {
@@ -10,54 +9,39 @@ function loadMenu(lang) {
         return;
     }
 
-    // Actualiza los elementos HTML con el texto del idioma seleccionado
+    // Actualiza los elementos HTML estáticos
     document.querySelector('.restaurant-name').textContent = langData.restaurantName;
     document.querySelector('.slogan').textContent = langData.slogan;
     document.querySelector('.daily-special-section .category-title').textContent = langData.dailySpecialTitle;
-    document.querySelector('.daily-special .item-name').textContent = langData.dailySpecial.name;
-    document.querySelector('.daily-special .item-description').textContent = langData.dailySpecial.description;
-    document.querySelector('.daily-special .item-price').textContent = langData.dailySpecial.price;
     document.querySelector('.main-dishes-section .category-title').textContent = langData.mainDishesTitle;
     document.querySelector('.footer p').textContent = langData.footerText;
 
-    // Aquí mostramos todos los platos principales al cargar el menú
-    displayDishes(langData.mainDishes);
+    // Carga el plato del día
+    displayDishes([langData.dailySpecial], '.daily-special-section');
+
+    // Carga los platos principales
+    displayDishes(langData.mainDishes, '.main-dishes-section');
 }
 
-// Nueva función para renderizar los platos en el HTML
-function displayDishes(dishes) {
-    const mainDishesContainer = document.getElementById('menu-grid');
-    mainDishesContainer.innerHTML = ''; // Limpiamos el contenido anterior
+function displayDishes(dishes, containerSelector) {
+    const container = document.querySelector(containerSelector);
+    let dishesHTML = '';
 
     dishes.forEach(dish => {
-        const itemHTML = `
+        dishesHTML += `
             <div class="card">
                 <img src="${dish.image}" alt="${dish.name}">
                 <div class="card-body">
                     <h3>${dish.name}</h3>
                     <p>${dish.description}</p>
-                    <span class="item-price">${dish.price}</span>
                 </div>
+                <span class="item-price">${dish.price}</span>
             </div>
         `;
-        mainDishesContainer.innerHTML += itemHTML;
     });
+    container.innerHTML += dishesHTML;
 }
 
-// Lógica para el buscador
-function handleSearch(event) {
-    const searchTerm = event.target.value.toLowerCase();
-    const currentLang = document.querySelector('.language-switcher button.active').dataset.lang;
-    const allDishes = menuData[currentLang].mainDishes;
-    
-    const filteredDishes = allDishes.filter(dish => {
-        return dish.name.toLowerCase().includes(searchTerm) || dish.description.toLowerCase().includes(searchTerm);
-    });
-
-    displayDishes(filteredDishes);
-}
-
-// Esta función carga los datos del menú desde el archivo JSON
 async function fetchMenuData() {
     try {
         const response = await fetch('menu-data.json');
@@ -65,9 +49,8 @@ async function fetchMenuData() {
             throw new Error('No se pudo cargar el archivo del menú.');
         }
         const data = await response.json();
-        Object.assign(menuData, data); // Almacena los datos en el objeto global
+        Object.assign(menuData, data);
 
-        // Configura los botones de idioma
         const langButtons = document.querySelectorAll('.language-switcher button');
         langButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -77,10 +60,6 @@ async function fetchMenuData() {
             });
         });
 
-        // Configura el buscador
-        document.getElementById('buscador').addEventListener('input', handleSearch);
-
-        // Carga el menú en español por defecto
         document.querySelector('button[data-lang="es"]').classList.add('active');
         loadMenu('es');
 
@@ -89,5 +68,4 @@ async function fetchMenuData() {
     }
 }
 
-// Escucha el evento de carga de la página
 document.addEventListener('DOMContentLoaded', fetchMenuData);
