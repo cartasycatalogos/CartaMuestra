@@ -1,0 +1,50 @@
+{
+    "es": {
+        "restaurantName": "Pizza Max",
+        "slogan": "El sabor de Villa Carlos Paz en tu pantalla",
+        "dailySpecialTitle": "Plato del Día",
+        "dailySpecial": {
+            "name": "Milanesa a Caballo",
+            "description": "Milanesa de ternera rebozada, cubierta con dos huevos fritos y acompañada de papas fritas caseras.",
+            "price": "$9.800"
+        },
+        "mainDishesTitle": "Platos Principales",
+        "mainDishes": [
+            {
+                "name": "Lomo a la Pimienta",
+                "description": "Un clásico irresistible de lomo tierno en salsa cremosa de pimienta negra, con puré de papas.",
+                "price": "$11.500"
+            },
+            {
+                "name": "Ravioles de Calabaza",
+                "description": "Ravioles caseros rellenos de calabaza asada y especias, con una suave salsa de manteca y salvia.",
+                "price": "$10.200"
+            }
+        ],
+        "footerText": "© 2025 [Nombre del Restaurante]."
+    },
+    "en": {
+        "restaurantName": "[Restaurant Name]",
+        "slogan": "The taste of Villa Carlos Paz on your screen",
+        "dailySpecialTitle": "Daily Special",
+        "dailySpecial": {
+            "name": "Argentinian Style Steak",
+            "description": "Breaded beef steak topped with two fried eggs and served with homemade french fries.",
+            "price": "$9.800"
+        },
+        "mainDishesTitle": "Main Courses",
+        "mainDishes": [
+            {
+                "name": "Loin Steak with Pepper Sauce",
+                "description": "An irresistible classic of tender loin steak in a creamy black pepper sauce, with mashed potatoes.",
+                "price": "$11.500"
+            },
+            {
+                "name": "Pumpkin Ravioli",
+                "description": "Homemade ravioli filled with roasted pumpkin and spices, with a delicate butter and sage sauce.",
+                "price": "$10.200"
+            }
+        ],
+        "footerText": "© 2025 [Restaurant Name]."
+    }
+}
