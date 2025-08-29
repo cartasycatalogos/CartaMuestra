@@ -22,10 +22,38 @@
     "menu": [
       { "cat": "entradas", "title": "Empanadas de carne (x2)", "desc": "Horneadas, jugosas, receta casera.", "price": 2500, "img": "https://picsum.photos/seed/empanadas/800/600" },
       { "cat": "entradas", "title": "Provoleta clásica", "desc": "Provolone a la plancha con orégano y chimichurri.", "price": 6500, "img": "https://picsum.photos/seed/provoleta/800/600" },
+      { "cat": "entradas", "title": "Bruschettas variadas", "desc": "Tomate, albahaca, aceite de oliva y pan tostado.", "price": 4800, "img": "https://picsum.photos/seed/bruschetta/800/600" },
+      { "cat": "entradas", "title": "Tabla de quesos", "desc": "Quesos artesanales con frutos secos.", "price": 7200, "img": "https://picsum.photos/seed/quesos/800/600" },
+      { "cat": "entradas", "title": "Ceviche de pescado", "desc": "Fresco con limón, cilantro y cebolla morada.", "price": 8500, "img": "https://picsum.photos/seed/ceviche/800/600" },
+      { "cat": "entradas", "title": "Aceitunas marinadas", "desc": "Selección de aceitunas con especias.", "price": 3200, "img": "https://picsum.photos/seed/aceitunas/800/600" },
+  
       { "cat": "minutas", "title": "Milanesa con fritas", "desc": "Clásica, corte generoso, papas crujientes.", "price": 11500, "img": "https://picsum.photos/seed/milanesa/800/600" },
+      { "cat": "minutas", "title": "Hamburguesa gourmet", "desc": "Pan artesanal, cheddar, lechuga, tomate.", "price": 9800, "img": "https://picsum.photos/seed/hamburguesa/800/600" },
+      { "cat": "minutas", "title": "Pizza napolitana", "desc": "Masa fina, tomate, mozzarella, albahaca.", "price": 8600, "img": "https://picsum.photos/seed/pizza/800/600" },
+      { "cat": "minutas", "title": "Taco mexicano", "desc": "Relleno de carne o pollo con salsa casera.", "price": 7500, "img": "https://picsum.photos/seed/taco/800/600" },
+      { "cat": "minutas", "title": "Wrap vegetariano", "desc": "Vegetales frescos, hummus y pan de pita.", "price": 6200, "img": "https://picsum.photos/seed/wrap/800/600" },
+      { "cat": "minutas", "title": "Sándwich de pollo", "desc": "Pechuga grillada, mayonesa y lechuga.", "price": 7100, "img": "https://picsum.photos/seed/sandwich/800/600" },
+  
       { "cat": "carnes", "title": "Asado de tira", "desc": "A la parrilla, término a elección.", "price": 15900, "img": "https://picsum.photos/seed/asado/800/600" },
+      { "cat": "carnes", "title": "Bife de chorizo", "desc": "Corte jugoso con guarnición de papas.", "price": 14800, "img": "https://picsum.photos/seed/bife/800/600" },
+      { "cat": "carnes", "title": "Vacío a la parrilla", "desc": "Tierno, marinado con chimichurri.", "price": 13900, "img": "https://picsum.photos/seed/vacio/800/600" },
+      { "cat": "carnes", "title": "Pollo al limón", "desc": "Suprema a la plancha con salsa cítrica.", "price": 9800, "img": "https://picsum.photos/seed/pollo/800/600" },
+      { "cat": "carnes", "title": "Costillas BBQ", "desc": "Tiernas y jugosas con salsa barbacoa.", "price": 13500, "img": "https://picsum.photos/seed/costillas/800/600" },
+      { "cat": "carnes", "title": "Chorizo parrillero", "desc": "Clásico chorizo a la parrilla con chimichurri.", "price": 6800, "img": "https://picsum.photos/seed/chorizo/800/600" },
+  
       { "cat": "postres", "title": "Flan casero", "desc": "Con dulce de leche y crema.", "price": 3800, "img": "https://picsum.photos/seed/flan/800/600" },
-      { "cat": "bebidas", "title": "Cerveza artesanal", "desc": "IPA o Golden.", "price": 3600, "img": "https://picsum.photos/seed/cerveza/800/600" }
+      { "cat": "postres", "title": "Tiramisú", "desc": "Clásico italiano con café y cacao.", "price": 4900, "img": "https://picsum.photos/seed/tiramisu/800/600" },
+      { "cat": "postres", "title": "Cheesecake de frutos rojos", "desc": "Base de galleta y crema suave.", "price": 5200, "img": "https://picsum.photos/seed/cheesecake/800/600" },
+      { "cat": "postres", "title": "Brownie con helado", "desc": "Chocolate intenso y helado de vainilla.", "price": 4500, "img": "https://picsum.photos/seed/brownie/800/600" },
+      { "cat": "postres", "title": "Helado artesanal", "desc": "Sabores variados, copa o cucurucho.", "price": 3800, "img": "https://picsum.photos/seed/helado/800/600" },
+      { "cat": "postres", "title": "Panqueque con dulce de leche", "desc": "Receta casera, cobertura de chocolate opcional.", "price": 4200, "img": "https://picsum.photos/seed/panqueque/800/600" },
+  
+      { "cat": "bebidas", "title": "Cerveza artesanal", "desc": "IPA o Golden.", "price": 3600, "img": "https://picsum.photos/seed/cerveza/800/600" },
+      { "cat": "bebidas", "title": "Vino Malbec", "desc": "Botella 750ml, selección de la casa.", "price": 9500, "img": "https://picsum.photos/seed/malbec/800/600" },
+      { "cat": "bebidas", "title": "Agua mineral", "desc": "Con gas o sin gas.", "price": 1500, "img": "https://picsum.photos/seed/agua/800/600" },
+      { "cat": "bebidas", "title": "Gaseosa", "desc": "Variedad de sabores, lata 355ml.", "price": 1200, "img": "https://picsum.photos/seed/gaseosa/800/600" },
+      { "cat": "bebidas", "title": "Limonada fresca", "desc": "Hecha en el momento, con menta y limón.", "price": 2000, "img": "https://picsum.photos/seed/limonada/800/600" },
+      { "cat": "bebidas", "title": "Café espresso", "desc": "Ideal para acompañar postres.", "price": 1800, "img": "https://picsum.photos/seed/cafe/800/600" }
     ]
   }
   

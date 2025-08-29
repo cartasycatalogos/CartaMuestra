@@ -3,7 +3,20 @@ let restaurant = {};
 let categories = [];
 let menuData = [];
 
-// Helpers
+// === Firebase Setup ===
+const firebaseConfig = {
+  apiKey: "AIzaSyCAIS5oSe-pwcVumx4wCYm46dtIEP-udTo",
+  authDomain: "cartamuest.firebaseapp.com",
+  projectId: "cartamuest",
+  storageBucket: "cartamuest.firebasestorage.app",
+  messagingSenderId: "888169747887",
+  appId: "1:888169747887:web:ee88e06461568857110b5a",
+  measurementId: "G-XHEFJC2WRL"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// === Helpers ===
 const $ = (sel, ctx=document) => ctx.querySelector(sel);
 const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
 const formatARS = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 });
@@ -25,6 +38,7 @@ fetch("data.json")
   })
   .catch(err => console.error("Error cargando data.json", err));
 
+// === Funciones ===
 function applyPalette(){
   const p = restaurant.palette || {};
   if(p.brand) document.documentElement.style.setProperty('--brand', p.brand);
@@ -102,11 +116,33 @@ function renderSections(){
           <p class="desc">${item.desc || ''}</p>
           <div class="meta">
             <span class="tag">${c.label}</span>
-            <button class="add" type="button">Ver más</button>
+            <div>
+              <button class="like-btn" type="button">❤️</button>
+              <span class="like-count">0</span>
+            </div>
           </div>
         </div>
       `;
       grid.appendChild(card);
+
+      // === Likes Firebase ===
+      const likeBtn = card.querySelector('.like-btn');
+      const likeCount = card.querySelector('.like-count');
+      const docRef = db.collection("menuItems").doc(item.id);
+
+      docRef.get().then(doc => {
+        if(doc.exists){
+          likeCount.textContent = doc.data().likes || 0;
+        } else {
+          docRef.set({ likes: 0 });
+        }
+      });
+
+      likeBtn.addEventListener('click', async ()=>{
+        await docRef.update({ likes: firebase.firestore.FieldValue.increment(1) });
+        const doc = await docRef.get();
+        likeCount.textContent = doc.data().likes;
+      });
     });
 
     section.appendChild(head);
@@ -143,6 +179,7 @@ function setupBackToTop(){
   onScroll();
   btn.addEventListener('click', ()=> window.scrollTo({ top:0, behavior:'smooth' }));
 }
+
 // === Dark Mode Toggle ===
 const darkModeToggle = document.createElement("button");
 darkModeToggle.id = "darkModeToggle";
