@@ -3,18 +3,30 @@ let restaurant = {};
 let categories = [];
 let menuData = [];
 
-// === Firebase Setup ===
+// === Firebase Setup (modular v9+) ===
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import { 
+  getFirestore, 
+  collection, 
+  doc, 
+  getDoc, 
+  setDoc, 
+  updateDoc, 
+  increment 
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyCAIS5oSe-pwcVumx4wCYm46dtIEP-udTo",
   authDomain: "cartamuest.firebaseapp.com",
   projectId: "cartamuest",
-  storageBucket: "cartamuest.firebasestorage.app",
+  storageBucket: "cartamuest.appspot.com", // ⚠️ corregí esto en consola
   messagingSenderId: "888169747887",
   appId: "1:888169747887:web:ee88e06461568857110b5a",
   measurementId: "G-XHEFJC2WRL"
 };
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 // === Helpers ===
 const $ = (sel, ctx=document) => ctx.querySelector(sel);
@@ -128,20 +140,23 @@ function renderSections(){
       // === Likes Firebase ===
       const likeBtn = card.querySelector('.like-btn');
       const likeCount = card.querySelector('.like-count');
-      const docRef = db.collection("menuItems").doc(item.id);
 
-      docRef.get().then(doc => {
-        if(doc.exists){
-          likeCount.textContent = doc.data().likes || 0;
+      // Para evitar depender de item.id, generamos docRef con el título como ID
+      const safeId = item.title.replace(/\s+/g, "_").toLowerCase();
+      const docRef = doc(db, "menu", safeId);
+
+      getDoc(docRef).then(snapshot => {
+        if(snapshot.exists()){
+          likeCount.textContent = snapshot.data().likes || 0;
         } else {
-          docRef.set({ likes: 0 });
+          setDoc(docRef, { likes: 0 });
         }
       });
 
       likeBtn.addEventListener('click', async ()=>{
-        await docRef.update({ likes: firebase.firestore.FieldValue.increment(1) });
-        const doc = await docRef.get();
-        likeCount.textContent = doc.data().likes;
+        await updateDoc(docRef, { likes: increment(1) });
+        const snapshot = await getDoc(docRef);
+        likeCount.textContent = snapshot.data().likes;
       });
     });
 
